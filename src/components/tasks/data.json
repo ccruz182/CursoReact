@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "nombre": "Día 1",
+      "descripcion": "Mi descripción",
+      "completada": false
+    },
+    {
+      "id": 2,
+      "nombre": "Día 2",
+      "descripcion": "Mi descripción",
+      "completada": false
+    },
+    {
+      "id": 3,
+      "nombre": "Día 3",
+      "descripcion": "Mi descripción",
+      "completada": true
+    }
+  ]
+}

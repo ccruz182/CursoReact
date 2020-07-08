@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "nombre": "Crear componente A",
+      "descripcion": "Creación del componente A, en React.",
+      "completada": "no"
+    },
+    {
+      "id": 2,
+      "nombre": "Poblar base de datos.",
+      "descripcion": "Realizar el ingreso de datos a la base de datos, que consumirá el front.",
+      "completada": "no"
+    },
+    {
+      "id": 3,
+      "nombre": "Día 3",
+      "descripcion": "Mi descripción",
+      "completada": "proceso"
+    },
+    {
+      "id": 4,
+      "nombre": "Pruebas",
+      "descripcion": "Realizar pruebas finales.",
+      "completada": "si"
+    }
+  ]
+}
