@@ -17,7 +17,11 @@ class InProgress extends Component {
     const inProgressTasks = this.mapper(this.props.inProgressTasks);
     return (
       <div style={{ padding: '1%' }} className='card'>
-        {inProgressTasks}
+        <div className='content'>
+          <div className='header'>In Progress</div>
+          <div class='ui divider'></div>
+          <div className='description'>{inProgressTasks}</div>
+        </div>
       </div>
     );
   }

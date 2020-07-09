@@ -15,7 +15,15 @@ class Done extends Component {
 
   render() {
     const doneTasks = this.mapper(this.props.doneTasks);
-    return <div style={{ padding: '1%' }} className='card'>{doneTasks}</div>;
+    return (
+      <div style={{ padding: '1%' }} className='card'>
+        <div className='content'>
+          <div className='header'>Done</div>
+          <div class="ui divider"></div>
+          <div className='description'>{doneTasks}</div>          
+        </div>
+      </div>
+    );
   }
 }
 

@@ -21,7 +21,11 @@ class ToDo extends Component {
 
     return (
       <div style={{ padding: '1%' }} className='card'>
-        {toDoTasks}
+        <div className='content'>
+          <div className='header'>To Do</div>
+          <div class='ui divider'></div>
+          <div className='description'>{toDoTasks}</div>
+        </div>        
       </div>
     );
   }

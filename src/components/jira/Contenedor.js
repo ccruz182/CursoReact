@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
+import * as uuid from 'uuid/v4';
 
-import Header from './Header';
-import ToDo from './ToDo';
-import InProgress from './InProgress';
-import Done from './Done';
+import { Done, Header, InProgress, ToDo } from '.';
 
 import tasks from './data.json';
 
@@ -12,6 +10,7 @@ import {
   getInProcessTasks,
   getTodoTasks
 } from './contenedor.funciones';
+import MyContext from '../../state/context';
 
 class Contenedor extends Component {
   state = {
@@ -38,6 +37,17 @@ class Contenedor extends Component {
     return updatedTasks;
   };
 
+  nuevoToDo = task => {
+    const nuevoTask = {
+      id: uuid(),
+      nombre: task.nombre,
+      descripcion: task.descripcion,
+      completada: 'no'
+    };
+
+    this.setState({ tasks: [...this.state.tasks, nuevoTask] });
+  };
+
   icons = {
     toDo: 'tasks icon',
     inProgress: 'spinner icon',
@@ -53,24 +63,28 @@ class Contenedor extends Component {
     console.log('toDo', toDoTasks);
 
     return (
-      <div className='ui fluid card'>
-        <div className='content'>
-          <Header />
-          <div className='ui three cards'>
-            <ToDo
-              toDoTasks={toDoTasks}
-              icon={this.icons.toDo}
-              toProgress={this.toDoToInProgress}
-            />
-            <InProgress
-              inProgressTasks={inProgressTasks}
-              icon={this.icons.inProgress}
-              toDone={this.inProgressToDone}
-            />
-            <Done doneTasks={doneTasks} icon={this.icons.done}/>
+      <MyContext.Consumer>
+        {context => (
+          <div className=''>            
+            <div className='content'>
+              <Header nuevoToDo={this.nuevoToDo} />
+              <div className='ui three cards'>
+                <ToDo
+                  toDoTasks={toDoTasks}
+                  icon={this.icons.toDo}
+                  toProgress={this.toDoToInProgress}
+                />
+                <InProgress
+                  inProgressTasks={inProgressTasks}
+                  icon={this.icons.inProgress}
+                  toDone={this.inProgressToDone}
+                />
+                <Done doneTasks={doneTasks} icon={this.icons.done} />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        )}
+      </MyContext.Consumer>
     );
   }
 }

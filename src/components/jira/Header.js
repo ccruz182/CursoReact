@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Formulario from './Formulario';
 
 class Header extends Component {
   style = {
@@ -8,7 +9,7 @@ class Header extends Component {
   render() {
     return (
       <div style={this.style} className='ui fluid card'>
-        react-redux-redux-saga
+        <Formulario nuevoToDo={this.props.nuevoToDo}/>
       </div>
     );
   }

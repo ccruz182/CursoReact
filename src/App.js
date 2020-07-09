@@ -7,15 +7,24 @@ import Tasks from './components/tasks/Tasks';
 
 import Contenedor from './components/jira/Contenedor';
 
+
+import MyContext from './state/context';
+import Hooks from './components/hooks/Hooks';
+
 function App() {
   return (
-    <div className="ui container">
-      <Card titulo='Tasks'>
+    <div style={{ marginBottom: '10%' }} className='ui container'>
+      <MyContext.Provider value='dark'>
+        <Card titulo='Tasks'>
           <Tasks />
-      </Card>
-      <Card titulo='JIRA'>
-        <Contenedor />
-      </Card>
+        </Card>
+        <Card titulo='JIRA'>
+          <Contenedor />
+        </Card>
+        <Card titulo='Hooks'>
+          <Hooks />
+        </Card>
+      </MyContext.Provider>
     </div>
   );
 }
