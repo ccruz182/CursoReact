@@ -68,7 +68,7 @@ class Contenedor extends Component {
           <div className=''>            
             <div className='content'>
               <Header nuevoToDo={this.nuevoToDo} />
-              <div className='ui three cards'>
+              <div className='ui three stackable cards mq'>
                 <ToDo
                   toDoTasks={toDoTasks}
                   icon={this.icons.toDo}
